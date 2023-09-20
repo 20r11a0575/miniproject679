@@ -8,7 +8,7 @@ warnings.filterwarnings('ignore')
 
 
 @app.route('/')
-def index():
+def home():
   return render_template('Project.html')
 
 
