@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Machine Learning Prediction</title>
+     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <style>
+        /* Apply background image */
+        body {
+            background-image: url('https://walrus-assets.s3.amazonaws.com/img/AdamsNeilson_NarrativeMedicine_735.jpg'); /* Replace with the URL of your image */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            margin: 0; /* Remove default margin */
+            display: flex; /* Use flexbox for centering */
+            flex-direction: column; /* Stack children vertically */
+            align-items: center; /* Center horizontally */
+            justify-content: space-between; /* Space between the elements */
+            height: 100vh; /* Set the height of the body to viewport height */
+        }
+
+        /* Style for the form container */
+       .form-container {
+    backdrop-filter: blur(250px); /* Adjust the blur amount as needed */
+    background-color: rgba(255, 255, 255, 0.5); /* Adjust the background color and opacity as needed */
+    padding: 20px; /* Add padding to content so it's readable */
+    text-align: left; /* Left-align the form content */
+    border-radius: 10px; /* Add rounded corners to the container */
+    width: 100%; /* Take up the full width */
+    max-width: 400px; /* Limit the maximum width */
+    margin-left: auto; /* Align to the right side */
+    margin-right: 100px; /* Leave some space on the right */
+}
+
+
+
+        /* Style for labels */
+        label {
+            font-weight: bold; /* Make labels bold */
+            display: block; /* Display labels as block elements for better spacing */
+            margin-bottom: 5px; /* Add some space between labels and inputs */
+            color: black; /* Change label text color */
+            font-size: 16px; /* Change label font size */
+            font-family: 'Roboto', sans-serif; /* Use the "Roboto" font family */
+        }
+
+        /* Style for h1 */
+        h1 {
+            color: white; /* Change the text color to white */
+            text-align: center; /* Center-align the text */
+            font-size: 48px; /* Increase the font size */
+            font-family: 'Roboto', sans-serif; /* Specify your desired font family */
+            margin-top: 20px; /* Add space above the heading */
+        }
+
+        /* Style for input fields */
+        input {
+            padding: 10px; /* Add padding to input fields */
+            margin-bottom: 10px; /* Add space between input fields */
+            width: calc(100% - 40px); /* Calculate the width for input fields */
+            display: block; /* Display input fields as block elements */
+            border: 1px solid #ccc; /* Add a border to input fields */
+            border-radius: 5px; /* Add rounded corners to input fields */
+            background-color: #f9f9f9; /* Set a background color for input fields */
+            font-size: 16px; /* Change font size for input fields */
+            font-family: 'Roboto', sans-serif; /* Use the "Roboto" font family */
+        }
+
+        /* Style for the Predict button */
+        button[type="submit"] {
+            background-color: #007BFF; /* Change button background color */
+            color: #fff; /* Change button text color */
+            border: none; /* Remove button border */
+            padding: 10px 20px; /* Add padding to the button */
+            cursor: pointer; /* Change cursor to pointer on hover */
+            border-radius: 5px; /* Add rounded corners to the button */
+            font-size: 18px; /* Change button font size */
+            font-weight: bold; /* Make button text bold */
+            transition: background-color 0.3s ease; /* Add smooth transition for background color */
+            margin-top: 10px; /* Add space above the button */
+        }
+
+        /* Change button background color on hover */
+        button[type="submit"]:hover {
+            background-color: #0056b3; /* Change to a darker shade on hover */
+        }
+    </style>
+</head>
+<body>
+    <h1>DELIRIUM PSYCHOMOTOR BEHAVIOR IDENTIFICATION</h1>
+  <div class="form-container">
+    
+    <form action="/predict" method="post">
+        <!-- Add input fields for user input -->
+        <!-- For example, you can add input fields for Age, Education, etc. -->
+      <label for="gender">Gender(Male-1/Female-0):</label>
+        <input type="number" name="gender" id="gender" required><br><br>
+        <label for="age">Age:</label>
+        <input type="number" name="age" id="age" required><br><br>
+
+        <label for="education">Education:</label>
+        <input type="number" name="education" id="education" required><br><br>
+         <label for="ses">Social Economical Status:</label>
+        <input type="number" name="ses" id="ses" required><br><br>
+      <label for="mmse">MiniMental score Examination Score:</label>
+        <input type="number" name="mmse" id="mmse" required><br><br>
+      <label for="etiv">Estimated total intra cranical volume:</label>
+        <input type="number" name="etiv" id="etiv" required><br><br>
+      <label for="nwbv">Normalize Whole-brain volume:</label>
+        <input type="decimal" name="nwbv" id="nwbv" required><br><br>
+      <label for="asf">Atlas Scaling Factor:</label>
+        <input type="decimal" name="asf" id="asf" required><br><br>
+        <!-- Add more input fields as needed -->
+
+       <button type="submit" onclick="openProjectPage()">Predict</button>
+      
+    </form>
+  </div>
+    <!-- Display prediction result here -->
+    <div id="prediction-result"></div>
+  <script>
+function openProjectPage() {
+    // Redirect to Project1.html
+    window.location.href = 'Project1.html';
+}
+</script>
+</body>
+</html>

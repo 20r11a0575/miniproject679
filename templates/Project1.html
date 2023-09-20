@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Display</title>
+    <style>
+        body {
+            background-color: #f0f0f0; /* Set the background color for the whole page */
+            font-family: "Noto Sans", sans-serif;
+        }
+
+         p {
+            font-size:80px; /* Adjust the font size */
+            margin-top: 0;
+            color: #cc4d4d;
+            margin-bottom: 15px;
+            font-family: "Pacifico", cursive; /* Change the font family for the <p> tag */
+            text-transform: uppercase; /* Convert text to uppercase */
+            letter-spacing: 2px; /* Add letter spacing */
+            line-height: 1.2; /* Set the line height for better readability */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Add text shadow */
+        }
+
+        /* Style for image containers */
+        .image-container {
+            background-color: #fff; /* Set the background color for image containers */
+            border: 2px solid #ccc; /* Add a border around each image container */
+            padding: 10px; /* Add padding to each image container */
+            margin: 10px; /* Add margin between image containers */
+            display: inline-block; /* Display image containers inline */
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2); /* Add a subtle shadow to image containers */
+            text-align: center; /* Center-align the content within image containers */
+        }
+
+        /* Style for images */
+        img {
+            max-width: 100%; /* Ensure images don't exceed their container width */
+            height: auto; /* Maintain image aspect ratio */
+            display: block; /* Remove any extra spacing below images */
+            margin: 0 auto; /* Center-align the images horizontally within their containers */
+            margin-bottom: 10px; /* Add space below each image */
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <p>{{n}}</p>
+        
+        <!-- Display the mmse_plot.png image -->
+       <h1>
+          Graph for MiniMental score Examination Score:
+        </h1><br>
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='mmse_plot.png') }}" alt="MMSE Plot">
+        </div>
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='MMSE_plot.png') }}" alt="MMSE Plot">
+        </div>
+
+        <!-- Display other images (img1, img2, img3, img4, img5) -->
+       <h1>
+          Plot for Age:
+        </h1><br>
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='Age_plot.png') }}" alt="Image 1">
+        </div>
+   <h1>
+         Graph for Education:
+        </h1><br>
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='EDUC_plot.png') }}" alt="Image 2">
+        </div>
+    <h1>
+         Graph for Estimated total intra cranical volume:
+        </h1><br>
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='eTIV_plot.png') }}" alt="Image 3">
+        </div>
+<h1>
+         Graph for Atlas Scaling Factor:
+        </h1><br>
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='ASF_plot.png') }}" alt="Image 4">
+        </div>
+    <h1>
+         Graph for Normalize Whole-brain volume:
+        </h1><br>
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='nWBV_plot.png') }}" alt="Image 5">
+        </div>
+    </form>
+</body>
+</html>
